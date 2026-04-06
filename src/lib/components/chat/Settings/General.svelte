@@ -254,7 +254,7 @@
 						href="https://github.com/open-webui/open-webui/blob/main/docs/CONTRIBUTING.md#-translations-and-internationalization"
 						target="_blank"
 					>
-						Help us translate Open WebUI!
+						Help us translate Durar AI!
 					</a>
 				</div>
 			{/if}
@@ -291,7 +291,7 @@
 					bind:value={system}
 					className={'w-full text-sm outline-hidden resize-vertical' +
 						($settings.highContrastMode
-							? ' p-2.5 border-2 border-gray-300 dark:border-gray-700 rounded-lg bg-transparent text-gray-900 dark:text-gray-100 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 overflow-y-hidden'
+							? ' p-2.5 border-2 border-gray-300 dark:border-gray-700 rounded-lg bg-transparent text-gray-900 dark:text-gray-100 focus:ring-1 focus:ring-royal-blue focus:border-royal-blue overflow-y-hidden'
 							: '  dark:text-gray-300 ')}
 					rows="4"
 					placeholder={$i18n.t('Enter system prompt here')}

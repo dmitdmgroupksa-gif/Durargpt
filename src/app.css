@@ -457,7 +457,7 @@ input[type='number'] {
 	border-radius: 0.4rem;
 	box-decoration-break: clone;
 	padding: 0.1rem 0.3rem;
-	@apply text-sky-800 dark:text-sky-200 bg-sky-300/15 dark:bg-sky-500/15;
+	@apply text-royal-blue dark:text-sky-200 bg-sky-300/15 dark:bg-royal-blue/15;
 }
 
 .mention::after {
@@ -468,7 +468,7 @@ input[type='number'] {
 	border-radius: 0.4rem;
 	box-decoration-break: clone;
 	padding: 0.1rem 0.3rem;
-	@apply text-sky-800 dark:text-sky-200 bg-sky-300/15 dark:bg-sky-500/15;
+	@apply text-royal-blue dark:text-sky-200 bg-sky-300/15 dark:bg-royal-blue/15;
 }
 
 .tiptap .suggestion::after {
@@ -694,13 +694,13 @@ input[type='number'] {
 }
 
 body {
-	background: #fff;
-	color: #000;
+	background: #ffffff;
+	color: #4169E1;
 }
 
 .dark body {
-	background: #171717;
-	color: #eee;
+	background: #ffffff;
+	color: #4169E1;
 }
 
 /* Position the handle relative to each LI */

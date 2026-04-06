@@ -428,7 +428,7 @@
 			keywords: [
 				'about app',
 				'about me',
-				'about open webui',
+				'about Durar AI',
 				'about page',
 				'about us',
 				'aboutapp',

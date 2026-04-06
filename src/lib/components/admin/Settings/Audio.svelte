@@ -428,7 +428,7 @@
 									class="sr-only peer"
 								/>
 								<div
-									class="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+									class="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all dark:border-gray-600 peer-checked:bg-royal-blue"
 								></div>
 							</label>
 						</div>
@@ -481,7 +481,7 @@
 						</div>
 
 						<div class="mt-2 mb-1 text-xs text-gray-400 dark:text-gray-500">
-							{$i18n.t(`Open WebUI uses faster-whisper internally.`)}
+							{$i18n.t(`Durar AI uses faster-whisper internally.`)}
 
 							<a
 								class=" hover:underline dark:text-gray-200 text-gray-800"
@@ -627,7 +627,7 @@
 								</div>
 							</div>
 							<div class="mt-2 mb-1 text-xs text-gray-400 dark:text-gray-500">
-								{$i18n.t(`Open WebUI uses SpeechT5 and CMU Arctic speaker embeddings.`)}
+								{$i18n.t(`Durar AI uses SpeechT5 and CMU Arctic speaker embeddings.`)}
 
 								To learn more about SpeechT5,
 

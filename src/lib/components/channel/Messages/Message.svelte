@@ -96,7 +96,7 @@
 		class="flex flex-col justify-between w-full max-w-full mx-auto group hover:bg-gray-300/5 dark:hover:bg-gray-700/5 transition relative {className
 			? className
 			: `px-5 ${
-					replyToMessage ? 'border-l-4 border-blue-500 bg-blue-100/10 dark:bg-blue-100/5 pl-4' : ''
+					replyToMessage ? 'border-l-4 border-royal-blue bg-blue-100/10 dark:bg-blue-100/5 pl-4' : ''
 				} ${
 					(message?.reply_to_message?.meta?.model_id ?? message?.reply_to_message?.user_id) ===
 					$user?.id
@@ -482,7 +482,7 @@
 											class="flex items-center gap-1.5 transition rounded-xl px-2 py-1 cursor-pointer {reaction.users
 												.map((u) => u.id)
 												.includes($user?.id)
-												? ' bg-blue-300/10 outline outline-blue-500/50 outline-1'
+												? ' bg-blue-300/10 outline outline-royal-blue/50 outline-1'
 												: 'bg-gray-300/10 dark:bg-gray-500/10 hover:outline hover:outline-gray-700/30 dark:hover:outline-gray-300/30 hover:outline-1'}"
 											on:click={() => {
 												if (onReaction) {

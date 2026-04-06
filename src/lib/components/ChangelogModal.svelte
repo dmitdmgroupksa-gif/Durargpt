@@ -72,7 +72,7 @@
 								<div class="w-full">
 									<div
 										class="font-semibold uppercase text-xs {section === 'added'
-											? 'bg-blue-500/20 text-blue-700 dark:text-blue-200'
+											? 'bg-royal-blue/20 text-royal-blue dark:text-blue-200'
 											: section === 'fixed'
 												? 'bg-green-500/20 text-green-700 dark:text-green-200'
 												: section === 'changed'

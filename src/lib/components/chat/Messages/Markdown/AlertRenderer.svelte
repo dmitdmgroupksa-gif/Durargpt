@@ -17,8 +17,8 @@
 
 	const alertStyles: Record<AlertType, AlertTheme> = {
 		NOTE: {
-			border: 'border-sky-500',
-			text: 'text-sky-500',
+			border: 'border-royal-blue',
+			text: 'text-royal-blue',
 			icon: Info
 		},
 		TIP: {
