@@ -80,6 +80,7 @@ else
 fi
 
 # Run uvicorn
+echo "Starting Durar AI server on port $PORT..."
 WEBUI_SECRET_KEY="$WEBUI_SECRET_KEY" exec "$PYTHON_CMD" -m uvicorn open_webui.main:app \
     --host "$HOST" \
     --port "$PORT" \
