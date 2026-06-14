@@ -438,7 +438,7 @@
 				'about us',
 				'aboutapp',
 				'aboutme',
-				'aboutopenwebui',
+				'aboutdurarai',
 				'aboutpage',
 				'aboutus',
 				'check for updates',
