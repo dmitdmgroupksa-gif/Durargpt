@@ -990,7 +990,7 @@
 			bind:this={navElement}
 			id="sidebar"
 			class="h-screen max-h-[100dvh] min-h-screen select-none {$showSidebar
-				? `${$mobile ? 'bg-white dark:bg-gray-950' : 'bg-gray-100 dark:bg-black'} z-50`
+				? `${$mobile ? 'bg-white dark:bg-gray-950' : 'bg-gray-50 dark:bg-gray-950'} z-50`
 				: ' bg-transparent z-0 '} {$isApp
 				? `ml-[4.5rem] md:ml-0 `
 				: ' transition-all duration-300 '} shrink-0 text-gray-900 dark:text-gray-200 text-sm fixed top-0 left-0 overflow-x-hidden border-e border-gray-200 dark:border-gray-800"
