@@ -56,7 +56,7 @@
 		>
 			<img
 				src="{WEBUI_BASE_URL}/static/favicon.png"
-				class="size-10 {selected === '' ? 'rounded-2xl' : 'rounded-full'}"
+				class="size-11 {selected === '' ? 'rounded-2xl' : 'rounded-full'}"
 				alt="logo"
 				draggable="false"
 			/>
