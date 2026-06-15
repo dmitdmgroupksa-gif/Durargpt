@@ -341,5 +341,6 @@ async def check_model_access(
             if not await has_base_model_access(user.id, model_info, user_group_ids=user_group_ids):
                 raise HTTPException(status_code=403, detail='Model not found')
     else:
-        if user.role != 'admin':
-            raise HTTPException(status_code=403, detail='Model not found')
+        # Models not registered in the DB (e.g. directly connected OpenAI/Ollama models)
+        # are publicly accessible to all authenticated users
+        return

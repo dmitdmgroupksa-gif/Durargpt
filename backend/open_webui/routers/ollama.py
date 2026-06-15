@@ -382,7 +382,7 @@ async def get_filtered_models(models, user, db=None):
     return [
         m
         for m in models.get('models', [])
-        if (mi := model_infos.get(m['model'])) and (user.id == mi.user_id or mi.id in accessible_ids)
+        if (mi := model_infos.get(m['model'])) is None or (user.id == mi.user_id or mi.id in accessible_ids)
     ]
 
 
