@@ -485,19 +485,8 @@
 
 	const getAvailableSettings = () => {
 		return allSettings.filter((tab) => {
-			if (tab.id === 'connections') {
-				return $config?.features?.enable_direct_connections;
-			}
-
-			if (tab.id === 'tools') {
-				return (
-					$user?.role === 'admin' ||
-					($user?.role === 'user' && $user?.permissions?.features?.direct_tool_servers)
-				);
-			}
-
-			if (tab.id === 'interface') {
-				return $user?.role === 'admin' || ($user?.permissions?.settings?.interface ?? true);
+			if (['connections', 'tools', 'interface'].includes(tab.id)) {
+				return $user?.role === 'admin';
 			}
 
 			if (tab.id === 'personalization') {
@@ -681,57 +670,53 @@
 								<div class=" self-center">{$i18n.t('Interface')}</div>
 							</button>
 						{:else if tabId === 'connections'}
-							{#if $user?.role === 'admin' || ($user?.role === 'user' && $config?.features?.enable_direct_connections)}
-								<button
-									role="tab"
-									aria-controls="tab-connections"
-									aria-selected={selectedTab === 'connections'}
-									class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition
-								${
-									selectedTab === 'connections'
-										? ($settings?.highContrastMode ?? false)
-											? 'dark:bg-gray-800 bg-gray-200'
-											: ''
-										: ($settings?.highContrastMode ?? false)
-											? 'hover:bg-gray-200 dark:hover:bg-gray-800'
-											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'
-								}`}
-									on:click={() => {
-										selectedTab = 'connections';
-									}}
-								>
-									<div class=" self-center mr-2">
-										<Link strokeWidth="2" />
-									</div>
-									<div class=" self-center">{$i18n.t('Connections')}</div>
-								</button>
-							{/if}
+							<button
+								role="tab"
+								aria-controls="tab-connections"
+								aria-selected={selectedTab === 'connections'}
+								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition
+							${
+								selectedTab === 'connections'
+									? ($settings?.highContrastMode ?? false)
+										? 'dark:bg-gray-800 bg-gray-200'
+										: ''
+									: ($settings?.highContrastMode ?? false)
+										? 'hover:bg-gray-200 dark:hover:bg-gray-800'
+										: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'
+							}`}
+								on:click={() => {
+									selectedTab = 'connections';
+								}}
+							>
+								<div class=" self-center mr-2">
+									<Link strokeWidth="2" />
+								</div>
+								<div class=" self-center">{$i18n.t('Connections')}</div>
+							</button>
 						{:else if tabId === 'tools'}
-							{#if $user?.role === 'admin' || ($user?.role === 'user' && $user?.permissions?.features?.direct_tool_servers)}
-								<button
-									role="tab"
-									aria-controls="tab-tools"
-									aria-selected={selectedTab === 'tools'}
-									class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition
-								${
-									selectedTab === 'tools'
-										? ($settings?.highContrastMode ?? false)
-											? 'dark:bg-gray-800 bg-gray-200'
-											: ''
-										: ($settings?.highContrastMode ?? false)
-											? 'hover:bg-gray-200 dark:hover:bg-gray-800'
-											: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'
-								}`}
-									on:click={() => {
-										selectedTab = 'tools';
-									}}
-								>
-									<div class=" self-center mr-2">
-										<WrenchAlt strokeWidth="2" />
-									</div>
-									<div class=" self-center">{$i18n.t('Integrations')}</div>
-								</button>
-							{/if}
+							<button
+								role="tab"
+								aria-controls="tab-tools"
+								aria-selected={selectedTab === 'tools'}
+								class={`px-0.5 md:px-2.5 py-1 min-w-fit rounded-xl flex-1 md:flex-none flex text-left transition
+							${
+								selectedTab === 'tools'
+									? ($settings?.highContrastMode ?? false)
+										? 'dark:bg-gray-800 bg-gray-200'
+										: ''
+									: ($settings?.highContrastMode ?? false)
+										? 'hover:bg-gray-200 dark:hover:bg-gray-800'
+										: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'
+							}`}
+								on:click={() => {
+									selectedTab = 'tools';
+								}}
+							>
+								<div class=" self-center mr-2">
+									<WrenchAlt strokeWidth="2" />
+								</div>
+								<div class=" self-center">{$i18n.t('Integrations')}</div>
+							</button>
 						{:else if tabId === 'personalization'}
 							<button
 								role="tab"
