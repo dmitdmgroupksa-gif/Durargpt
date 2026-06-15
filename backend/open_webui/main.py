@@ -1666,6 +1666,7 @@ async def embeddings(request: Request, form_data: dict, user=Depends(get_verifie
 
 @app.post('/api/chat/completions')
 @app.post('/api/v1/chat/completions')  # Experimental: Compatibility with OpenAI API
+async def chat_completions(request: Request, form_data: dict, user=Depends(get_optional_user)):
     if not request.app.state.MODELS:
         await get_all_models(request, user=user)
 
@@ -2216,13 +2217,13 @@ async def embeddings(request: Request, form_data: dict, user=Depends(get_verifie
         return await process_chat(request, form_data, user, metadata, model, tasks)
 
 
-# Alias for chat_completion (Legacy)
-generate_chat_completions = chat_completion
-generate_chat_completion = chat_completion
+# Alias for chat_completions (Legacy)
+generate_chat_completions = chat_completions
+generate_chat_completion = chat_completions
 
 # Expose as app.state so internal callers (e.g. automations) can
 # use the full pipeline without importing from main.py (avoids circular deps).
-app.state.CHAT_COMPLETION_HANDLER = chat_completion
+app.state.CHAT_COMPLETION_HANDLER = chat_completions
 
 
 ##################################
