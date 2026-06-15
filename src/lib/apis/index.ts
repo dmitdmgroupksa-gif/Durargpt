@@ -1,4 +1,4 @@
-import { WEBUI_BASE_URL } from '$lib/constants';
+import { WEBUI_BASE_URL, MODEL_NAME_MAPPING } from '$lib/constants';
 import { convertOpenApiToToolPayload } from '$lib/utils';
 import { getOpenAIModelsDirect } from './openai';
 
@@ -168,6 +168,11 @@ export const getModels = async (
 
 		models = Object.values(modelsMap);
 	}
+
+	models = models.map((model) => ({
+		...model,
+		name: MODEL_NAME_MAPPING[model.id] ?? model.name ?? model.id
+	}));
 
 	return models;
 };

@@ -1,7 +1,7 @@
 import { browser, dev } from '$app/environment';
 // import { version } from '../../package.json';
 
-export const APP_NAME = 'Durar Ai';
+export const APP_NAME = 'Durar';
 
 export const WEBUI_HOSTNAME = browser ? (dev ? `${location.hostname}:8080` : ``) : '';
 export const WEBUI_BASE_URL = browser ? (dev ? `http://${WEBUI_HOSTNAME}` : ``) : ``;
@@ -96,6 +96,28 @@ export const SUPPORTED_FILE_EXTENSIONS = [
 	'ppt',
 	'msg'
 ];
+
+export const MODEL_NAME_MAPPING: Record<string, string> = {
+	'gpt-4o': 'Durar Orion - 2',
+	'gpt-4o-2024-08-06': 'Durar Orion - 2',
+	'gpt-4o-2024-05-13': 'Durar Orion - 2',
+	'gpt-4o-mini': 'Orion nano',
+	'gpt-4o-mini-2024-07-18': 'Orion nano',
+	'gpt-4-turbo': 'Durar Orion - 2 Turbo',
+	'gpt-4': 'Durar Orion - 2 Legacy',
+	'gpt-3.5-turbo': 'Orion mini',
+	'o1': 'Durar Orion - 1',
+	'o1-mini': 'Orion mini',
+	'o1-preview': 'Durar Orion - 1 Preview',
+	'o3-mini': 'Orion nano',
+	'claude-3-opus': 'Durar Orion - 2 Pro',
+	'claude-3-sonnet': 'Durar Orion - 2',
+	'claude-3-haiku': 'Orion nano',
+	'claude-3.5-sonnet': 'Durar Orion - 2',
+	'gemini-pro': 'Durar Orion - 2',
+	'gemini-1.5-pro': 'Durar Orion - 2 Pro',
+	'gemini-1.5-flash': 'Orion nano',
+};
 
 export const DEFAULT_CAPABILITIES = {
 	file_context: true,
