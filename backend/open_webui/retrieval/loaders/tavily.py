@@ -2,7 +2,10 @@ import logging
 from typing import Iterator, List, Literal, Union
 
 import requests
-from langchain_core.document_loaders import BaseLoader
+try:
+    from langchain_core.document_loaders import BaseLoader
+except Exception:
+    BaseLoader = object
 from langchain_core.documents import Document
 
 log = logging.getLogger(__name__)

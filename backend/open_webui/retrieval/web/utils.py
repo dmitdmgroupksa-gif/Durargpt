@@ -27,8 +27,13 @@ import urllib3.connectionpool
 import validators
 from requests.adapters import HTTPAdapter
 from fastapi.concurrency import run_in_threadpool
-from langchain_community.document_loaders import PlaywrightURLLoader, WebBaseLoader
-from langchain_community.document_loaders.base import BaseLoader
+try:
+    from langchain_community.document_loaders import PlaywrightURLLoader, WebBaseLoader
+    from langchain_community.document_loaders.base import BaseLoader
+except Exception:
+    PlaywrightURLLoader = None
+    WebBaseLoader = None
+    BaseLoader = None
 from langchain_core.documents import Document
 from open_webui.config import (
     ENABLE_RAG_LOCAL_WEB_FETCH,
@@ -445,7 +450,9 @@ class SafeTavilyLoader(BaseLoader, RateLimitMixin, URLProcessingMixin):
                 raise e
 
 
-class SafePlaywrightURLLoader(PlaywrightURLLoader, RateLimitMixin, URLProcessingMixin):
+_PlaywrightURLLoader = PlaywrightURLLoader or object
+
+class SafePlaywrightURLLoader(_PlaywrightURLLoader, RateLimitMixin, URLProcessingMixin):
     """Load HTML pages safely with Playwright, supporting SSL verification, rate limiting, and remote browser connection.
 
     Attributes:
@@ -617,7 +624,9 @@ class SafePlaywrightURLLoader(PlaywrightURLLoader, RateLimitMixin, URLProcessing
             await browser.close()
 
 
-class SafeWebBaseLoader(WebBaseLoader):
+_WebBaseLoader = WebBaseLoader or object
+
+class SafeWebBaseLoader(_WebBaseLoader):
     """WebBaseLoader with enhanced error handling for URLs."""
 
     def __init__(self, trust_env: bool = False, *args, **kwargs):

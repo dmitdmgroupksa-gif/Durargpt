@@ -1,0 +1,1 @@
+start "Durar Ai Backend" cmd /c "set WEBUI_SECRET_KEY=dev-key-1234567890abcdef&& set CORS_ALLOW_ORIGIN=http://localhost:5173;http://localhost:8080&& uvicorn open_webui.main:app --host 0.0.0.0 --port 8080 --reload"

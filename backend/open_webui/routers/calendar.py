@@ -22,7 +22,7 @@ from open_webui.models.calendar import (
 from open_webui.models.groups import Groups
 from open_webui.models.users import UserModel
 from open_webui.utils.access_control import filter_allowed_access_grants, has_permission
-from open_webui.utils.auth import get_verified_user
+from open_webui.utils.auth import get_admin_user, get_verified_user
 from open_webui.utils.calendar import expand_recurring_event
 
 log = logging.getLogger(__name__)

@@ -4,7 +4,10 @@ from typing import Iterator, List, Union
 from urllib.parse import quote
 
 import requests
-from langchain_core.document_loaders import BaseLoader
+try:
+    from langchain_core.document_loaders import BaseLoader
+except Exception:
+    BaseLoader = object
 from langchain_core.documents import Document
 from open_webui.utils.headers import include_user_info_headers
 

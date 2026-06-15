@@ -1,0 +1,7 @@
+INFO:     Will watch for changes in these directories: ['C:\\Users\\GIGABYTE\\Downloads\\open-webui-main (1)\\durar-webui-main\\backend']
+INFO:     Uvicorn running on http://0.0.0.0:8080 (Press CTRL+C to quit)
+INFO:     Started reloader process [24876] using WatchFiles
+WEBUI_SECRET_KEY is not set. It is a hard requirement when authentication is enabled.
+The supported start methods set or auto-generate it for you: use start.sh (Linux/macOS), start_windows.bat (Windows), or `open-webui serve`.
+If you start the backend another way (e.g. invoking uvicorn directly, which is unsupported), you must set WEBUI_SECRET_KEY yourself to a long random value.
+See https://docs.openwebui.com/reference/env-configuration#webui_secret_key
