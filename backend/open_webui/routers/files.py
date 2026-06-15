@@ -37,9 +37,7 @@ from open_webui.models.files import (
 from open_webui.models.groups import Groups
 from open_webui.models.knowledge import Knowledges
 from open_webui.models.users import Users
-from open_webui.retrieval.vector.async_client import ASYNC_VECTOR_DB_CLIENT
 from open_webui.routers.audio import transcribe
-from open_webui.routers.retrieval import ProcessFileForm, process_file
 from open_webui.storage.provider import Storage
 from open_webui.utils.auth import get_admin_user, get_verified_user
 from open_webui.utils.misc import strict_match_mime_type

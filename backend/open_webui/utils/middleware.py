@@ -52,22 +52,6 @@ from open_webui.routers.images import (
     image_edits,
     image_generations,
 )
-from open_webui.routers.memories import QueryMemoryForm, query_memory
-from open_webui.routers.pipelines import (
-    process_pipeline_inlet_filter,
-    process_pipeline_outlet_filter,
-)
-from open_webui.routers.retrieval import (
-    SearchForm,
-    process_web_search,
-)
-from open_webui.routers.tasks import (
-    generate_chat_tags,
-    generate_follow_ups,
-    generate_image_prompt,
-    generate_queries,
-    generate_title,
-)
 from open_webui.socket.main import (
     get_event_call,
     get_event_emitter,

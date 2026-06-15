@@ -31,9 +31,7 @@ from open_webui.env import (
     WEBSOCKET_SERVER_PING_TIMEOUT,
 )
 from open_webui.models.access_grants import AccessGrants
-from open_webui.models.channels import Channels
 from open_webui.models.chats import Chats
-from open_webui.models.notes import Notes, NoteUpdateForm
 from open_webui.models.users import UserNameResponse, Users
 from open_webui.socket.utils import RedisDict, RedisLock, YdocManager
 from open_webui.tasks import create_task, stop_item_tasks

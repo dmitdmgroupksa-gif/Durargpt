@@ -6,12 +6,6 @@ from fastapi import Request
 from open_webui.env import BYPASS_MODEL_ACCESS_CONTROL, GLOBAL_LOG_LEVEL
 from open_webui.models.models import Models
 from open_webui.models.users import UserModel
-from open_webui.routers.ollama import (
-    GenerateEmbedForm,
-)
-from open_webui.routers.ollama import (
-    embed as ollama_embed,
-)
 from open_webui.routers.openai import embeddings as openai_embeddings
 from open_webui.utils.models import check_model_access
 from open_webui.utils.payload import convert_embed_payload_openai_to_ollama
