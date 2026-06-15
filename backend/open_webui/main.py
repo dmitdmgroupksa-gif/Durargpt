@@ -1130,34 +1130,9 @@ app.state.rf = None
 app.state.YOUTUBE_LOADER_TRANSLATION = None
 
 
-try:
-    app.state.ef = None
-    app.state.rf = None
-except Exception:
-    app.state.ef = None
-    app.state.rf = None
-
-
 app.state.EMBEDDING_FUNCTION = None  # RAG disabled (OpenAI-only mode)
-    ),
-    key=(
-        app.state.config.RAG_OPENAI_API_KEY
-        if app.state.config.RAG_EMBEDDING_ENGINE == 'openai'
-        else (
-            app.state.config.RAG_OLLAMA_API_KEY
-            if app.state.config.RAG_EMBEDDING_ENGINE == 'ollama'
-            else app.state.config.RAG_AZURE_OPENAI_API_KEY
-        )
-    ),
-    embedding_batch_size=app.state.config.RAG_EMBEDDING_BATCH_SIZE,
-    azure_api_version=(
-        app.state.config.RAG_AZURE_OPENAI_API_VERSION
-        if app.state.config.RAG_EMBEDDING_ENGINE == 'azure_openai'
-        else None
-    ),
-    enable_async=app.state.config.ENABLE_ASYNC_EMBEDDING,
-    concurrent_requests=app.state.config.RAG_EMBEDDING_CONCURRENT_REQUESTS,
-)
+app.state.ef = None
+app.state.rf = None
 
 app.state.RERANKING_FUNCTION = None  # RAG disabled (OpenAI-only mode)
 
@@ -1381,8 +1356,6 @@ if ENABLE_ADMIN_ANALYTICS:
     app.include_router(utils.router, prefix='/api/v1/utils', tags=['utils'])
 
 # SCIM 2.0 API for identity management
-if ENABLE_SCIM:
-    
 
 try:
     audit_level = AuditLevel(AUDIT_LOG_LEVEL)
