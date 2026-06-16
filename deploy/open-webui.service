@@ -1,0 +1,20 @@
+[Unit]
+Description=Durar (Open WebUI)
+After=network.target
+Wants=redis-server.service
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/durar/backend
+EnvironmentFile=/etc/durar.env
+ExecStart=/opt/durar/backend/venv/bin/uvicorn open_webui.main:app --host 127.0.0.1 --port 8080 --workers ${UVICORN_WORKERS:-2} --forwarded-allow-ips 127.0.0.1
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
